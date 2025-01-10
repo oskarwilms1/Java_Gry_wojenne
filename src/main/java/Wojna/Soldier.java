@@ -5,7 +5,7 @@ public class Soldier {
     private int experience;
     private int strength;
 
-    public Soldier(String rank, int experience) {
+    public Soldier(String rank,int experience) {
         this.rank = rank;
         this.experience = experience;
         this.strength = calculateStrength();
@@ -22,7 +22,7 @@ public class Soldier {
             else if (rank == "Captain"){
                 this.rank = "Major";
             }
-            this.experience = 0;
+            this.experience = 1;
         }
     }
 
@@ -34,6 +34,11 @@ public class Soldier {
     }
     public void decreaseExperience() {
         this.experience--;
+        if (experience==0){
+            this.rank = "Dead";
+            this.strength = 0;
+            
+        }
     }
 
     public int calculateStrength() {
